@@ -10,4 +10,9 @@ public class KafkaListeners {
     void listener(String data) {
         System.out.println("Listener received : " + data);
     }
+
+    @KafkaListener(topics = "output-topic", groupId = "group-id")
+    public void listen(String message) {
+        System.out.println("Received from output-topic: " + message);
+    }
 }
